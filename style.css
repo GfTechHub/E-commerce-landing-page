@@ -1,0 +1,289 @@
+    /* General */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      scroll-behavior: smooth; /* smooth scroll */
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url('https://picsum.photos/1920/800?random=1') center/cover no-repeat;
+      color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      animation: fadeInDown 1.2s ease;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    /* Product & Category Cards */
+    .product-card img,
+    #categories img {
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover img,
+    #categories .p-4:hover img {
+      transform: scale(1.05);
+    }
+    .product-card:hover,
+    #categories .p-4:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+
+    /* Testimonials */
+    #testimonials .card {
+      transition: transform 0.3s ease;
+    }
+    #testimonials .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-in-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Keyframes */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transf    /* General */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      scroll-behavior: smooth; /* smooth scroll */
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url('https://picsum.photos/1920/800?random=1') center/cover no-repeat;
+      color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      animation: fadeInDown 1.2s ease;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    /* Product & Category Cards */
+    .product-card img,
+    #categories img {
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover img,
+    #categories .p-4:hover img {
+      transform: scale(1.05);
+    }
+    .product-card:hover,
+    #categories .p-4:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+
+    /* Testimonials */
+    #testimonials .card {
+      transition: transform 0.3s ease;
+    }
+    #testimonials .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-in-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Keyframes */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }    /* General */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      scroll-behavior: smooth; /* smooth scroll */
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url('https://picsum.photos/1920/800?random=1') center/cover no-repeat;
+      color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      animation: fadeInDown 1.2s ease;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    /* Product & Category Cards */
+    .product-card img,
+    #categories img {
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover img,
+    #categories .p-4:hover img {
+      transform: scale(1.05);
+    }
+    .product-card:hover,
+    #categories .p-4:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+
+    /* Testimonials */
+    #testimonials .card {
+      transition: transform 0.3s ease;
+    }
+    #testimonials .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-in-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Keyframes */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }    /* General */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      scroll-behavior: smooth; /* smooth scroll */
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url('https://picsum.photos/1920/800?random=1') center/cover no-repeat;
+      color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      animation: fadeInDown 1.2s ease;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    /* Product & Category Cards */
+    .product-card img,
+    #categories img {
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover img,
+    #categories .p-4:hover img {
+      transform: scale(1.05);
+    }
+    .product-card:hover,
+    #categories .p-4:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+
+    /* Testimonials */
+    #testimonials .card {
+      transition: transform 0.3s ease;
+    }
+    #testimonials .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-in-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Keyframes */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }orm: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
