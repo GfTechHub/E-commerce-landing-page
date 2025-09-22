@@ -48,6 +48,11 @@
           <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
           <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item">
+  <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+    🛒 Cart (0)
+  </a>
+</li>
           <li class="nav-item"><a class="nav-link btn btn-primary text-white px-3 ms-2" href="#">Sign Up</a></li>
         </ul>
       </div>
@@ -194,5 +199,67 @@
       });
     });
   </script>
+    <script>
+    let cart = [];
+    const cartItemsContainer = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+    const cartLink = document.querySelector('a[data-bs-target="#cartModal"]');
+    
+    // Add product to cart
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", function(e) {
+        e.preventDefault();
+        const name = this.getAttribute("data-name");
+        const price = parseFloat(this.getAttribute("data-price"));
+        
+        cart.push({ name, price });
+        updateCart();
+      });
+    });
+    
+    function updateCart() {
+      // Clear list
+      cartItemsContainer.innerHTML = "";
+      
+      let total = 0;
+      cart.forEach((item, index) => {
+        total += item.price;
+        const li = document.createElement("li");
+        li.className = "list-group-item d-flex justify-content-between align-items-center";
+        li.innerHTML = `
+          ${item.name} - $${item.price.toFixed(2)}
+          <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Remove</button>
+        `;
+        cartItemsContainer.appendChild(li);
+      });
+      
+      cartTotal.textContent = total.toFixed(2);
+      cartLink.textContent = `🛒 Cart (${cart.length})`;
+    }
+    
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+  </script>
+  <!-- Cart Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cartModalLabel">Your Shopping Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <ul id="cart-items" class="list-group mb-3"></ul>
+        <p class="fw-bold">Total: $<span id="cart-total">0.00</span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+        <button type="button" class="btn btn-primary">Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
