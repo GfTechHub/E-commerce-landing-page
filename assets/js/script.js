@@ -52,3 +52,20 @@ function removeFromCart(index) {
 function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
+document.getElementById("checkoutBtn").addEventListener("click", function() {
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+  
+  let total = cart.reduce((sum, item) => sum + item.price, 0);
+  
+  let confirmPayment = confirm(`Your total is $${total.toFixed(2)}. Proceed to fake payment?`);
+  if (confirmPayment) {
+    alert("Payment successful! Thank you for your purchase.");
+    cart = [];
+    saveCart();
+    updateCart();
+    bootstrap.Modal.getInstance(document.getElementById('cartModal')).hide();
+  }
+});
