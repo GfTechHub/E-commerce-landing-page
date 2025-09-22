@@ -199,49 +199,57 @@
       });
     });
   </script>
-    <script>
-    let cart = [];
-    const cartItemsContainer = document.getElementById("cart-items");
-    const cartTotal = document.getElementById("cart-total");
-    const cartLink = document.querySelector('a[data-bs-target="#cartModal"]');
+<script>
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartItemsContainer = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
+  const cartLink = document.querySelector('a[data-bs-target="#cartModal"]');
+  
+  // Initialize cart display
+  updateCart();
+  
+  // Add product to cart
+  document.querySelectorAll(".add-to-cart").forEach(button => {
+    button.addEventListener("click", function(e) {
+      e.preventDefault();
+      const name = this.getAttribute("data-name");
+      const price = parseFloat(this.getAttribute("data-price"));
+      
+      cart.push({ name, price });
+      saveCart();
+      updateCart();
+    });
+  });
+  
+  function updateCart() {
+    cartItemsContainer.innerHTML = "";
     
-    // Add product to cart
-    document.querySelectorAll(".add-to-cart").forEach(button => {
-      button.addEventListener("click", function(e) {
-        e.preventDefault();
-        const name = this.getAttribute("data-name");
-        const price = parseFloat(this.getAttribute("data-price"));
-        
-        cart.push({ name, price });
-        updateCart();
-      });
+    let total = 0;
+    cart.forEach((item, index) => {
+      total += item.price;
+      const li = document.createElement("li");
+      li.className = "list-group-item d-flex justify-content-between align-items-center";
+      li.innerHTML = `
+        ${item.name} - $${item.price.toFixed(2)}
+        <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Remove</button>
+      `;
+      cartItemsContainer.appendChild(li);
     });
     
-    function updateCart() {
-      // Clear list
-      cartItemsContainer.innerHTML = "";
-      
-      let total = 0;
-      cart.forEach((item, index) => {
-        total += item.price;
-        const li = document.createElement("li");
-        li.className = "list-group-item d-flex justify-content-between align-items-center";
-        li.innerHTML = `
-          ${item.name} - $${item.price.toFixed(2)}
-          <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Remove</button>
-        `;
-        cartItemsContainer.appendChild(li);
-      });
-      
-      cartTotal.textContent = total.toFixed(2);
-      cartLink.textContent = `🛒 Cart (${cart.length})`;
-    }
-    
-    function removeFromCart(index) {
-      cart.splice(index, 1);
-      updateCart();
-    }
-  </script>
+    cartTotal.textContent = total.toFixed(2);
+    cartLink.textContent = `🛒 Cart (${cart.length})`;
+  }
+  
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    saveCart();
+    updateCart();
+  }
+  
+  function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+</script>
   <!-- Cart Modal -->
 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
