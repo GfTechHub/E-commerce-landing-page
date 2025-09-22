@@ -1,0 +1,132 @@
+/* General */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar-nav .nav-link.btn {
+  transition: background 0.3s;
+}
+.navbar-nav .nav-link.btn:hover {
+  background-color: #ffc107;
+  color: #000;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('../images/hero.jpg') center/cover no-repeat;
+  color: white;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  animation: fadeInDown 1.2s ease;
+}
+.hero p {
+  font-size: 1.2rem;
+  animation: fadeInUp 1.5s ease;
+}
+
+/* Promo Banner */
+#promo {
+  background-color: #dc3545;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+#promo .btn {
+  margin-top: 0.5rem;
+}
+
+/* Sections */
+section {
+  padding: 5rem 0 3rem 0;
+}
+
+/* Product & Category Cards */
+.product-card img,
+#categories img {
+  transition: transform 0.3s ease;
+}
+.product-card:hover img,
+#categories .p-4:hover img {
+  transform: scale(1.05);
+}
+.product-card:hover,
+#categories .p-4:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+/* Testimonials */
+#testimonials .card {
+  transition: transform 0.3s ease;
+}
+#testimonials .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Newsletter */
+#newsletter input {
+  max-width: 300px;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-in-out;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Limit hero image height */
+.hero {
+  background-size: cover;
+  background-position: center;
+  max-height: 800px; /* prevents huge image from stretching page */
+}
+
+/* Products */
+.product-card img {
+  width: 100%;
+  height: 250px; /* fixed height for all products */
+  object-fit: cover; /* keeps aspect ratio, crops excess */
+}
+
+/* Categories */
+#categories img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+  .hero {
+    max-height: 500px;
+  }
+  .product-card img {
+    height: 200px;
+  }
+}
